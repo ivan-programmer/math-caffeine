@@ -1,7 +1,7 @@
 {
   "name": "simplify-math",
   "version": "0.0.1",
-  "description": "Project simplyfying your mathimatical calculations",
+  "description": "A project simplyfying your mathematical calculations",
   "main": "gulpfile.js",
   "dependencies": {
     "graceful-fs": "^4.1.11",
@@ -13,7 +13,9 @@
     "gulp-rename": "^1.2.2",
     "minimatch": "^3.0.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-pug": "^3.3.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

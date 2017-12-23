@@ -1,9 +1,10 @@
-### Gulp File by Ivan Vinogradov for do-math project ###
+### Gulp File by Ivan Vinogradov for simplify-math project ###
 
 gulp = require 'gulp'
 stylus = require 'gulp-stylus'
 coffee = require 'gulp-coffee'
 mincss = require 'gulp-csso'
+pug = require 'gulp-pug'
 minjs = require 'gulp-uglify'
 rename = require 'gulp-rename'
 
@@ -63,6 +64,18 @@ gulp.task 'stylus', ->
     console.log "----===**  Compiling STYLUS file  **===----"
     gulp.start 'mincss'
 
+gulp.task 'pug', ->
+  gulp.src './source/index.pug'
+
+  .pipe pug()
+  .on 'error', (err) ->
+    console.error '\n\n\n*** PUG Compile Error occurred *** \n\n\n'
+    console.log err
+    console.error '\n\n\n*** PUG Compile Error backtrace ended *** \n\n\n'
+
+  .pipe gulp.dest './public'
+  console.log "----===**  Compiling PUG file  **===----"
+
 gulp.task 'coffee:watch', ->
   gulp.watch './source/script.coffee', ['coffee']
   console.log "----===**  Watching to COFFEE file  **===----"
@@ -70,6 +83,10 @@ gulp.task 'coffee:watch', ->
 gulp.task 'stylus:watch', ->
   gulp.watch './source/stylesheet.styl', ['stylus']
   console.log "----===**  Watching to STYLUS file  **===----"
+
+gulp.task 'pug:watch', ->
+  gulp.watch './source/index.pug', ['pug']
+  console.log "----===** Watching to PUG file  **===----"
 
 gulp.task 'minjs:watch', ->
   gulp.watch './public/script.js', ['minjs']
@@ -82,6 +99,7 @@ gulp.task 'mincss:watch', ->
 gulp.task 'watch', ->
   gulp.start 'coffee:watch'
   gulp.start 'stylus:watch'
+  gulp.start 'pug:watch'
   console.log "----===**  WATCHING IS STARTED  **===----"
 
 gulp.task 'default', ->
