@@ -7,6 +7,7 @@ mincss = require 'gulp-csso'
 pug = require 'gulp-pug'
 minjs = require 'gulp-uglify'
 rename = require 'gulp-rename'
+mainfiles = require 'main-bower-files'
 
 gulp.task 'minjs', ->
   gulp.src './public/script.js'
@@ -76,6 +77,10 @@ gulp.task 'pug', ->
   .pipe gulp.dest './public'
   console.log "----===**  Compiling PUG file  **===----"
 
+gulp.task 'mainfiles', ->
+  gulp.src mainfiles()
+    .pipe gulp.dest './public/libs/'
+
 gulp.task 'coffee:watch', ->
   gulp.watch './source/script.coffee', ['coffee']
   console.log "----===**  Watching to COFFEE file  **===----"
@@ -104,4 +109,4 @@ gulp.task 'watch', ->
 
 gulp.task 'default', ->
   gulp.start 'watch'
-  console.log "----===**  DEFAULT TASK IS STARTED  **===----"
+  console.log "----===**  GULP IS RUNNING  **===----"

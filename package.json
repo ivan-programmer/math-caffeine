@@ -14,7 +14,8 @@
     "minimatch": "^3.0.4"
   },
   "devDependencies": {
-    "gulp-pug": "^3.3.0"
+    "gulp-pug": "^3.3.0",
+    "main-bower-files": "^2.13.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
