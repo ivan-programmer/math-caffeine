@@ -1,0 +1,25 @@
+{
+  "name": "simplify-math",
+  "description": "A project simplyfying your mathematical calculations",
+  "main": "gulpfile.js",
+  "authors": [
+    "Ivan Vinogradov <ivan.web-developer@ya.ru>"
+  ],
+  "dependencies": {
+    "jquery": "latest"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "math",
+    "calc"
+  ],
+  "homepage": "https://github.com/ivan-programmer/simplify-math",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public/libs/",
+    "test",
+    "tests"
+  ]
+}
